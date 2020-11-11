@@ -1,9 +1,9 @@
 import sys
 
 '''
-    *
-    * Function for calculating the size of the variable "x"
-    *
+    -
+    - Function for calculating the size of the variable "x"
+    -
 '''
 def get_size(x, level=0, print_res = True):
     if print_res:
@@ -21,11 +21,12 @@ def get_size(x, level=0, print_res = True):
     return total_size
 
 '''
-    *
-    * Calculating the sum of array elements from the index of the minimum element to the maximum
-    *
+    -
+    - Calculating the sum of array elements from the index of the minimum element to the maximum
+    -
 '''
-mas = [int(input()) for i in range(15)]
+
+mas = [float(input()) for i in range(5)]
 
 id_max= mas.index(max(mas))
 id_min= mas.index(min(mas))
@@ -33,13 +34,13 @@ id_min= mas.index(min(mas))
 sum_mas = sum([i for i in mas[min(id_min,id_max)+1:max(id_max,id_min)]])
 
 '''
-    *
-    * Calculating code memory size
-    *
+    -
+    - Calculating code memory size
+    -
 '''
 
-ttl_size = get_size(sum_mas)+get_size(id_min)+get_size(id_max)+get_size(mas)
-+get_size(len(mas))+get_size(len(mas[min(id_min,id_max)+1:max(id_max,id_min)]))
+ttl_size = get_size(sum_mas)+2*get_size(id_min)+get_size(mas)+get_size(len(mas))
++get_size(len(mas[min(id_min,id_max)+1:max(id_max,id_min)]))
 
-
+print(sum_mas)
 print(ttl_size)
