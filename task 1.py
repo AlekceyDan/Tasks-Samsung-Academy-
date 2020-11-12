@@ -5,7 +5,7 @@ import sys
     - Function for calculating the size of the variable "x"
     -
 '''
-def get_size(x, level=0, print_res = True):
+def get_size(x, level=0, print_res = False):
     if print_res:
         print('\t' * level, f'type {x.__class__}, size={sys.getsizeof(x)}, object= {x}')
     total_size = sys.getsizeof(x)
